@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio Dinata saniaa </title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #fff5fb;
+            --card: #ffffff;
+            --text: #333333;
+            --subtext: #666666;
+            --pink: #e7549b;
+            --darkpink: #d93684;
+            --softpink: #ffe5f1;
+            --border: #ffd0e3;
+        }
+
+        body.dark {
+            --bg: #18131a;
+            --card: #251e27;
+            --text: #f5f5f5;
+            --subtext: #cccccc;
+            --pink: #e7549b;
+            --darkpink: #f06ba9;
+            --softpink: #352330;
+            --border: #63394f;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: var(--pink);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-menu a:hover {
+            color: #ffe5f1;
+        }
+
+        /* DARK MODE BUTTON */
+
+        .theme-btn {
+            border: none;
+            background: white;
+            color: #d93684;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* HAMBURGER */
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .profile-circle {
+            width: 170px;
+            height: 170px;
+            margin: auto;
+            border-radius: 50%;
+            border: 5px solid var(--pink);
+            overflow: hidden;
+            background: var(--softpink);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin-top: 20px;
+            font-size: 38px;
+            color: var(--darkpink);
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: var(--subtext);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 11px 23px;
+            background: var(--pink);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--darkpink);
+            transform: translateY(-2px);
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 70px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--darkpink);
+            margin-bottom: 40px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-box {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-photo {
+            width: 190px;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 4px solid var(--pink);
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            color: var(--darkpink);
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .biodata {
+            margin-top: 15px;
+        }
+
+        .biodata p {
+            margin: 5px 0;
+        }
+
+        /* ================= MY SKILL ================= */
+
+        .skills-section {
+            background: var(--softpink);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .skill-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: var(--darkpink);
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--subtext);
+        }
+
+        /* ================= PROJECT ================= */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-icon {
+            height: 140px;
+            border-radius: 15px;
+            background: var(--softpink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            color: var(--darkpink);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--subtext);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            background: var(--card);
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-box p {
+            margin: 10px;
+        }
+
+        .contact-box a {
+            color: var(--darkpink);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--darkpink);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* ================= MODAL ================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 450px;
+            background: var(--card);
+            color: var(--text);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 8px;
+            font-size: 30px;
+            color: var(--darkpink);
+            cursor: pointer;
+        }
+
+        /* ================= CALCULATOR ================= */
+
+        .calculator-display {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 24px;
+            text-align: right;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .calculator-buttons button {
+            padding: 15px;
+            border: none;
+            background: var(--softpink);
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* ================= DAILY LIST ================= */
+
+        .todo-input {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .todo-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        #todoList {
+            list-style: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #todoList li {
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--softpink);
+            border-radius: 8px;
+        }
+
+        /* ================= TOP BUTTON ================= */
+
+        #topButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: var(--pink);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 12px 18px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--pink);
+                flex-direction: column;
+                text-align: center;
+                gap: 0;
+                padding: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                padding: 12px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .todo-input {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Dinata ✨
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" onclick="closeMenu()">Beranda</a></li>
+                <li><a href="#about" onclick="closeMenu()">Tentang</a></li>
+                <li><a href="#skills" onclick="closeMenu()">My Skill</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Proyek</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Kontak</a></li>
+            </ul>
+
+            <div class="nav-right">
+
+                <button class="theme-btn"
+                        onclick="toggleTheme()"
+                        id="themeButton">
+                    🌙
+                </button>
+
+                <div class="hamburger"
+                     onclick="toggleMenu()">
+                    ☰
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= BERANDA ================= -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="profile-circle">
+                    <img src="https://uploads.onecompiler.io/45447qjvv/1790157450902/WhatsApp%20Image%202026-09-23%20at%2002.15.18.jpeg"
+                         alt="Foto Dinata">
+                </div>
+
+                <h1>
+                    Halo, Saya Dinata💐
+                    
+                </h1>
+
+                <p>
+                    Saya adalah siswi SMK krian 1 Sidoarjo
+                    yang sedang mempelajari pemrograman,
+                    desain website, UI/UX, dan teknologi.
+                </p>
+
+                <a href="#projects" class="btn">
+                    Lihat proyek 
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TENTANG ================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Tentang Saya
+                </h2>
+
+                <div class="about-box">
+
+                    <div class="about-content">
+
+                        <div class="about-photo">
+
+                            <img src="https://uploads.onecompiler.io/45447qjvv/1790157450902/WhatsApp%20Image%202026-09-23%20at%2002.15.18.jpeg"
+                                 alt="Foto Dinata">
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Dinata Tsaniya Azmi
+                            </h3>
+
+                            <p>
+                                Halo! Saya Dinata Tsaniya Azmi.
+                                Saya memiliki ketertarikan pada dunia
+                                teknologi, khususnya pemrograman dan
+                                pembuatan website.
+                                Saya ingin mengembangkan kemampuan, menambah
+                                pengalaman, dan terus belajar menjadi lebih 
+                                kreatif serta terampil di bidang teknologi.
+                            </p>
+
+                            <div class="biodata">
+
+                                <p>
+                                    <b>Kelas:</b> X RPL 3
+                                </p>
+
+                                <p>
+                                    <b>Absen:</b> 04
+                                </p>
+
+                                <p>
+                                    <b>Sekolah:</b>
+                                    SMK Krian 1 Sidoarjo
+                                </p>
+
+                                <p>
+                                    <b>SD:</b> MI Nurul Huda
+                                </p>
+
+                                <p>
+                                    <b>SMP:</b> SMP Al Islam Krian
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY SKILL ================= -->
+
+        <section id="skills"
+                 class="skills-section">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    My Skill
+                </h2>
+
+                <div class="skills-container">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            🌐
+                        </div>
+
+                        <h3>
+                            HTML
+                        </h3>
+
+                        <p>
+                            Membuat struktur halaman
+                            website menggunakan HTML5.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            🎨
+                        </div>
+
+                        <h3>
+                            CSS
+                        </h3>
+
+                        <p>
+                            Membuat tampilan website
+                            menarik dan responsif.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Membuat website menjadi
+                            interaktif dengan JavaScript.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROYEK ================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Proyek Saya
+                </h2>
+
+                <div class="project-grid">
+
+
+                    <!-- KALKULATOR -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🧮
+                        </div>
+
+                        <h3>
+                            Kalkulator
+                        </h3>
+
+                        <p>
+                            Kalkulator sederhana menggunakan
+                            HTML, CSS, dan JavaScript.
+                        </p>
+
+                        <button class="btn"
+                                onclick="openDemo('calculator')">
+                            Demo Proyek
+                        </button>
+
+                    </div>
+
+
+                    <!-- DAILY LIST -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            📝
+                        </div>
+
+                        <h3>
+                            Daily List
+                        </h3>
+
+                        <p>
+                            Aplikasi daftar kegiatan untuk
+                            mencatat aktivitas sehari-hari.
+                        </p>
+
+                        <button class="btn"
+                                onclick="openDemo('todo')">
+                            Demo Proyek
+                        </button>
+
+                    </div>
+
+
+                    <!-- MINI QUIZ -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            ❓
+                        </div>
+
+                        <h3>
+                            Mini Quiz
+                        </h3>
+
+                        <p>
+                            Quiz sederhana untuk menguji
+                            pengetahuan tentang pemrograman.
+                        </p>
+
+                        <button class="btn"
+                                onclick="openDemo('quiz')">
+                            Demo Proyek
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KONTAK ================= -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Kontak
+                </h2>
+
+                <div class="contact-box">
+
+                    <p>
+                        📧 Email:
+                        <a href="mailto:dinatasaniaaa@gmail.com">
+                            dinatasaniaaa@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        📷 Instagram:
+                        <a href="#">
+                            @dinsn1aa
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MODAL DEMO ================= -->
+
+    <div class="modal"
+         id="demoModal">
+
+        <div class="modal-content">
+
+            <span class="close"
+                  onclick="closeDemo()">
+                ×
+            </span>
+
+            <div id="demoContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOMBOL KE ATAS ================= -->
+
+    <button id="topButton"
+            onclick="goTop()">
+        ↑
+    </button>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Dinata Tsaniya Azmi
+        </p>
+
+        <p>
+            Mini Project Portofolio UI/UX
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* ================= HAMBURGER ================= */
+
+        function toggleMenu() {
+
+            document
+                .getElementById("navMenu")
+                .classList.toggle("active");
+
+        }
+
+
+        function closeMenu() {
+
+            document
+                .getElementById("navMenu")
+                .classList.remove("active");
+
+        }
+
+
+        /* ================= DARK / LIGHT MODE ================= */
+
+        function toggleTheme() {
+
+            document.body.classList.toggle("dark");
+
+            const button =
+                document.getElementById("themeButton");
+
+            if (document.body.classList.contains("dark")) {
+
+                button.textContent = "☀️";
+
+                localStorage.setItem("theme", "dark");
+
+            } else {
+
+                button.textContent = "🌙";
+
+                localStorage.setItem("theme", "light");
+
+            }
+
+        }
+
+
+        /* SIMPAN TEMA */
+
+        if (localStorage.getItem("theme") === "dark") {
+
+            document.body.classList.add("dark");
+
+            document.getElementById("themeButton")
+                .textContent = "☀️";
+
+        }
+
+
+        /* ================= DEMO PROJECT ================= */
+
+        function openDemo(type) {
+
+            const modal =
+                document.getElementById("demoModal");
+
+            const content =
+                document.getElementById("demoContent");
+
+            modal.classList.add("active");
+
+
+            /* KALKULATOR */
+
+            if (type === "calculator") {
+
+                content.innerHTML = `
+
+                    <h2>🧮 Kalkulator</h2>
+
+                    <input
+                        type="text"
+                        id="calcDisplay"
+                        class="calculator-display"
+                        readonly
+                    >
+
+                    <div class="calculator-buttons">
+
+                        <button onclick="clearCalc()">C</button>
+                        <button onclick="addCalc('/')">÷</button>
+                        <button onclick="addCalc('*')">×</button>
+                        <button onclick="addCalc('-')">−</button>
+
+                        <button onclick="addCalc('7')">7</button>
+                        <button onclick="addCalc('8')">8</button>
+                        <button onclick="addCalc('9')">9</button>
+                        <button onclick="addCalc('+')">+</button>
+
+                        <button onclick="addCalc('4')">4</button>
+                        <button onclick="addCalc('5')">5</button>
+                        <button onclick="addCalc('6')">6</button>
+                        <button onclick="calculate()">=</button>
+
+                        <button onclick="addCalc('1')">1</button>
+                        <button onclick="addCalc('2')">2</button>
+                        <button onclick="addCalc('3')">3</button>
+                        <button onclick="addCalc('0')">0</button>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /* DAILY LIST */
+
+            if (type === "todo") {
+
+                content.innerHTML = `
+
+                    <h2>📝 Daily List</h2>
+
+                    <div class="todo-input">
+
+                        <input
+                            type="text"
+                            id="todoInput"
+                            placeholder="Tulis kegiatan..."
+                        >
+
+                        <button
+                            class="btn"
+                            onclick="addTodo()">
+                            Tambah
+                        </button>
+
+                    </div>
+
+                    <ul id="todoList"></ul>
+
+                `;
+
+            }
+
+
+            /* MINI QUIZ */
+
+            if (type === "quiz") {
+
+                content.innerHTML = `
+
+                    <h2>❓ Mini Quiz</h2>
+
+                    <p>
+                        Bahasa yang digunakan untuk
+                        membuat struktur website adalah?
+                    </p>
+
+                    <button
+                        class="btn"
+                        onclick="checkQuiz('HTML')">
+                        HTML
+                    </button>
+
+                    <button
+                        class="btn"
+                        onclick="checkQuiz('CSS')">
+                        CSS
+                    </button>
+
+                    <button
+                        class="btn"
+                        onclick="checkQuiz('JS')">
+                        JavaScript
+                    </button>
+
+                    <p id="quizResult"></p>
+
+                `;
+
+            }
+
+        }
+
+
+        function closeDemo() {
+
+            document
+                .getElementById("demoModal")
+                .classList.remove("active");
+
+        }
+
+
+        /* ================= KALKULATOR ================= */
+
+        function addCalc(value) {
+
+            document
+                .getElementById("calcDisplay")
+                .value += value;
+
+        }
+
+
+        function clearCalc() {
+
+            document
+                .getElementById("calcDisplay")
+                .value = "";
+
+        }
+
+
+        function calculate() {
+
+            const display =
+                document.getElementById("calcDisplay");
+
+            try {
+
+                display.value =
+                    eval(display.value);
+
+            } catch {
+
+                display.value = "Error";
+
+            }
+
+        }
+
+
+        /* ================= DAILY LIST ================= */
+
+        function addTodo() {
+
+            const input =
+                document.getElementById("todoInput");
+
+            const list =
+                document.getElementById("todoList");
+
+            if (input.value.trim() === "") {
+                return;
+            }
+
+            const item =
+                document.createElement("li");
+
+            item.textContent =
+                "✅ " + input.value;
+
+            list.appendChild(item);
+
+            input.value = "";
+
+        }
+
+
+        /* ================= QUIZ ================= */
+
+        function checkQuiz(answer) {
+
+            const result =
+                document.getElementById("quizResult");
+
+            if (answer === "HTML") {
+
+                result.innerHTML =
+                    "🎉 Jawaban benar!";
+
+            } else {
+
+                result.innerHTML =
+                    "❌ Belum tepat, coba lagi!";
+
+            }
+
+        }
+
+
+        /* ================= BACK TO TOP ================= */
+
+        function goTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
